@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <p [ngClass] ="{online : serverStatus == 'online'}"> Server ID : {{serverID}} , Status Server : {{serverStatus}}</p>
+            <button [disabled] = '!allowNewServer' class="btn btn-primary">Disable me</button><br>
+            <button class="btn btn-primary" (click)="onAddServer()">Add Server</button>
+            <ul class="list-group">
+              <li *ngFor="let server of servers; let i=index" class="list-group-item" (click) = "onRemoveServer(i)">{{server}} {{i+1}}</li>
+            </ul>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h3>pipes exampels</h3>
+            <p>price in dollar: {{priceTotal | currency : 'USD'}}</p>
+            <p>date for this day is : {{myDate | date:'y/M/d'}}</p>
+            <p>time for this day is : {{myDate | date:'shortTime'}}</p>
+            <p>desimal pipe : {{ 25.2034 | number :'2.2-2' }}</p>
+            <p>employees names : {{employeesNames | slice :1:4}}</p>
+            <p>json obect : {{jsonObject | json}}</p>
+            <h4>costum pipe exampel</h4>
+            <p>sqrt of 16 with power 3 is : {{16 | sqrtwithpower :3}}</p>          
+        </div>
+    </div>
+</div>

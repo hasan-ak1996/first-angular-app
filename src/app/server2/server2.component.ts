@@ -6,22 +6,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./server2.component.css']
 })
 export class Server2Component implements OnInit {
+  serverID : Number =10;
+  serverStatus : string = 'offline';
+  isDisabled : boolean = true;
   allowNewServer = false;
   serverCreationStatus = 'No server is created.';
-  serverName='testServer';
-  severCreated = false;
+  serverName='';
+  servers = [];
   constructor() { }
 
   ngOnInit(): void {
+    setTimeout(()=>{
+      this.allowNewServer = true;
+        },5000);
+      this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline'
+  }
+  getServerStatus(){
+    return this.serverStatus;
+  }
+  
+  onAddServer(){
+    this.servers.push('new server');
   }
 
-  onCreateServer(){
-    this.severCreated = true;
-    this.serverCreationStatus = 'server is created. name of the server is :' + this.serverName;
+  onRemoveServer(Id : number){
+    this.servers.splice(Id,1);
   }
-  onUpdateServerName(event : Event){
-    this.serverName = (<HTMLInputElement>event.target).value;
-  }
-
-
 }
