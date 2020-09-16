@@ -11,8 +11,8 @@ export class Server2Component implements OnInit {
   isDisabled : boolean = true;
   allowNewServer = false;
   serverCreationStatus = 'No server is created.';
-  serverName='';
-  servers = [];
+  servers = []; 
+  sreverName='new server'; 
   constructor() { }
 
   ngOnInit(): void {
@@ -25,11 +25,10 @@ export class Server2Component implements OnInit {
     return this.serverStatus;
   }
   
-  onAddServer(){
-    this.servers.push('new server');
+  public onAddServer() { 
+        this.servers.push(this.sreverName); 
   }
-
-  onRemoveServer(Id : number){
-    this.servers.splice(Id,1);
-  }
+  public onRemoveServer(index) { 
+    this.servers.splice(index, 1); 
+}  
 }

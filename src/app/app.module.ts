@@ -8,6 +8,8 @@ import {SqrtPipe} from './sqrt-power/sqrt-power-pipe';
 import { Server2Component } from './server2/server2.component';
 import { PipeExampelsComponent } from './pipe-exampels/pipe-exampels.component';
 import { SignupComponent } from './signup/signup.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import { SignupComponent } from './signup/signup.component';
     Server2Component,
     PipeExampelsComponent,
     SignupComponent,
+    TodoListComponent
     
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule  
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

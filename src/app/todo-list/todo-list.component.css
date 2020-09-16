@@ -1,0 +1,31 @@
+.add-task{
+    display: flex;
+    justify-content: center;
+    background-color: #009688;
+    height: 50px;
+    align-items: center;
+}
+.add-task input{
+    width: 50%;
+    background-color: #4DB6AC;
+    margin-right: 10px;
+    color:#fff;
+    font-size:20px
+}
+.add-task button{
+    color: #fff;
+    background-color: #a8a5a5;
+}
+.task-content{
+    display: flex;
+    width: 61%;
+    margin: auto;
+    align-items: baseline;
+    background: #d7d8d7;
+    padding: 10px 15px;
+}
+.task-content .task{
+    width: 90%;
+    background: #fff;
+    padding: 7px;
+}
