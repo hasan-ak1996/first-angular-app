@@ -11,10 +11,11 @@ export class ProductesListComponent implements OnInit {
   @Output() onProductSelected: EventEmitter<Product>;
   private currentProduct: Product;
   constructor() { 
-    this.onProductSelected = new EventEmitter();
+    
   }
 
   ngOnInit(): void {
+    this.onProductSelected = new EventEmitter();
   }
   clicked(product :Product) :void{
     this.currentProduct = product;
