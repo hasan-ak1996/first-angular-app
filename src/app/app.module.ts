@@ -9,7 +9,13 @@ import { Server2Component } from './server2/server2.component';
 import { PipeExampelsComponent } from './pipe-exampels/pipe-exampels.component';
 import { SignupComponent } from './signup/signup.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { ProductesListComponent } from './productes-list/productes-list.component';
+import { ProductRowComponent } from './product-row/product-row.component';
+import { ProductImageComponent } from './product-image/product-image.component';
+import { ProductDepartmentComponent } from './product-department/product-department.component';
+import { PriceDisplayComponent } from './price-display/price-display.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +26,12 @@ import { FormsModule } from '@angular/forms'
     Server2Component,
     PipeExampelsComponent,
     SignupComponent,
-    TodoListComponent
+    TodoListComponent,
+    ProductesListComponent,
+    ProductRowComponent,
+    ProductImageComponent,
+    ProductDepartmentComponent,
+    PriceDisplayComponent,
     
   ],
   imports: [

@@ -1,13 +1,7 @@
-<!--exampel for *ngIf and costum directive-->
-<app-server></app-server>
-
-<!--exampel for *ngFor ngClass databinding-->
-<app-server2></app-server2>
-
-<!--exampel for pipes and costum pipe-->
-<app-pipe-exampels></app-pipe-exampels>
-
-<!--exampel for form-->
-<app-signup></app-signup>
-
-<app-todo-list></app-todo-list>
+  
+<div class="inventory-app">
+    <products-list
+      [productList]="products"
+      (onProductSelected)="productWasSelected($event)">
+    </products-list>
+  </div>
