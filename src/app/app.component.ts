@@ -11,6 +11,9 @@ export class AppComponent implements OnInit{
   products : Product[];
 
   constructor(){
+    
+  }
+  ngOnInit(): void {
     this.products = [
       new Product(
         'MYSHOES',
@@ -31,8 +34,6 @@ export class AppComponent implements OnInit{
         ['Men', 'Accessories', 'Hats'],
         29.99)
     ]
-  }
-  ngOnInit(): void {
 
   }
   productWasSelected(product : Product){
