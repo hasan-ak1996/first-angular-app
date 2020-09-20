@@ -1,0 +1,55 @@
+<div class="ui raised">
+    <h2 class="ui header">Sign Up</h2>
+    <form [formGroup]="myForm"
+          (ngSubmit)="onSubmit(myForm.value)"
+          class="ui form">
+    
+        <div class="field">
+            <label for="fullNameInput">FullName</label>
+            <input type="text"
+                id="fullNameInput"
+                placeholder="fullName"
+                [formControl]="fullName"
+                class="form-control">
+            <div class="error" *ngIf="fullName.hasError('required')">
+                fullName is required
+            </div>
+        </div>
+        <div class="field">
+            <label for="email">Email</label>
+            <input type="text"
+                id="email"
+                placeholder="email"
+                [formControl]="email"
+                class="form-control">
+            <div class="error" *ngIf="email.hasError('required')">
+                Email is required
+            </div>
+        </div>
+        <div class="field">
+            <label for="password">password</label>
+            <input type="password"
+                id="password"
+                placeholder="password"
+                [formControl]="password"
+                class="form-control">
+            <div class="error" *ngIf="password.hasError('required')">
+                password is required
+            </div>
+        </div>
+        <div class="field">
+            <label for="confirmPassword">confirm Password</label>
+            <input type="text"
+                id="confirmPassword"
+                placeholder="confirm Password"
+                [formControl]="confirmPassword"
+                class="form-control">
+            <div class="error" *ngIf="confirmPassword.hasError('required')">
+                confirm Password is required
+            </div>
+        </div>
+        
+  
+        <button type="submit" class="ui button">Submit</button>
+    </form>
+  </div>
