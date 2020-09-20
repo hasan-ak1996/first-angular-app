@@ -17,7 +17,7 @@ export class DemoFormSkuWithBuilderComponent implements OnInit {
   constructor( fb: FormBuilder ) { 
     this.myForm = fb.group({
       'fullName' : ['' , Validators.required],
-      'email' : ['' , Validators.compose([Validators.required , Validators.email])],
+      'email' : ['' , Validators.required],
       'password' : ['' , Validators.required],
       'confirmPassword' : ['' , Validators.required],
 
