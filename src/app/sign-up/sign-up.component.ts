@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup , FormBuilder, Validators, AbstractControl, FormControl} from '@angular/forms';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'sign-up',
@@ -14,7 +15,7 @@ export class DemoFormSkuWithBuilderComponent implements OnInit {
   confirmPassword  : AbstractControl;
 
 
-  constructor( fb: FormBuilder ) { 
+  constructor( fb: FormBuilder) { 
     this.myForm = fb.group({
       'fullName' : ['' , Validators.required],
       'email' : ['' , Validators.required],
@@ -33,8 +34,6 @@ export class DemoFormSkuWithBuilderComponent implements OnInit {
   }
   onSubmit(value : any){
     console.log('you submitted value:', value);
+  
   }
-
-
-
 }

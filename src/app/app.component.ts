@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from './product.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ import { Product } from './product.model';
 export class AppComponent implements OnInit{
   products : Product[];
 
-  constructor(){
+  constructor( ){
     
   }
   ngOnInit(): void {

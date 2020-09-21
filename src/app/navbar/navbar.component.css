@@ -1,0 +1,20 @@
+.page-header{
+    background-color: #f7f7f7;
+    margin:0
+}
+.page-header .container{
+    display: flex;
+    align-items: baseline;
+}
+.page-header h1{
+    font-size: 21px;
+}
+.page-header .navLinks{
+    margin-left: auto;
+}
+.page-header .navLinks a{
+    color: #888;
+    margin-right: 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
