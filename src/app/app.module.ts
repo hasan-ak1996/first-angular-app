@@ -19,21 +19,35 @@ import { DemoFormSkuWithBuilderComponent } from './sign-up/sign-up.component';
 import {  UserDemoComponent } from './user-demo/user-demo.component';
 import { UserService } from './services/user.service';
 import {RouterModule , Routes} from '@angular/router';
-import { Route } from '@angular/compiler/src/core';
-import { Product } from './product.model';
-
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
-const routes : Routes = [
-  {path : '' , redirectTo : 'home' , pathMatch : 'full'},
-  {path : 'home' , component : HomeComponent } ,
-  {path : 'about' , component : AboutComponent },
-  {path : 'contact' , component : ContactComponent} , 
-  {path : 'contactus' , redirectTo : 'contact'} , 
+ import { HttpClientModule } from '@angular/common/http';
+import { SearchComponent } from './music-app/search/search.component';
+import { SpotifyService } from './music-app/spotify-service';
+import { TrackComponent } from './music-app/track/track.component';
+import { AuthService } from './auth-service-class/auth-service';
+import { LoginComponent } from './login/login.component';
+import { ProtuctedComponent } from './protucted/protucted.component';
+import { LoggedInGuard } from './logged-in-guard';
 
+const routes : Routes = [
+
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'contactus', redirectTo: 'contact' },
+  { path: 'login', component: LoginComponent },
+  {
+     path: 'protected',
+     component: ProtuctedComponent,
+     canActivate: [ LoggedInGuard ]
+   },
+  { path: 'search', component: SearchComponent },
+  { path: 'tracks/:id', component: TrackComponent }
 ];
 
 
@@ -58,7 +72,11 @@ const routes : Routes = [
     HomeComponent,
     ContactComponent,
     AboutComponent,
-    NavbarComponent
+    NavbarComponent,
+    SearchComponent,
+    TrackComponent,
+    LoginComponent,
+    ProtuctedComponent
 
     
   ],
@@ -67,10 +85,16 @@ const routes : Routes = [
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
+    HttpClientModule
 
 
   ],
-  providers: [{ provide : UserService , useClass : UserService }],
+  providers: [
+    { provide : UserService , useClass : UserService },
+    {provide : SpotifyService , useClass : SpotifyService},
+    { provide: AuthService, useClass: AuthService },
+    LoggedInGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
