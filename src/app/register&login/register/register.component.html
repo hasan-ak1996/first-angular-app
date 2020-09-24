@@ -1,0 +1,66 @@
+<div class="container">
+    <h1>Register</h1>
+    <div class="card">
+        <form [formGroup]="registerForm" (ngSubmit)="registerForm.valid && onRegisterSubmit(registerForm.get('email'))">
+
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input  class="form-control"
+                        formControlName="name"
+                        id="name"
+                        type="text"
+                        ([ngModel])="user.name">
+                <div 
+                    class="alert alert-danger"
+                    *ngIf="registerForm.get('name').touched && !registerForm.get('name').valid">
+                    <div *ngIf="registerForm.get('name').errors.required">
+                        Name is required
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input  class="form-control"
+                        formControlName="email"
+                        id="email"
+                        type="email"
+                        ([ngModel])="user.email">
+                <div 
+                    class="alert alert-danger"
+                    *ngIf="registerForm.get('email').touched && !registerForm.get('email').valid">
+                    <div *ngIf="registerForm.get('email').errors.required">
+                        Email is required
+                    </div>
+                    <div *ngIf="registerForm.get('email').errors.email">
+                        should be email format
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input  class="form-control"
+                        formControlName="password"
+                        id="password"
+                        type="password"
+                        ([ngModel])="user.password">
+                <div 
+                    class="alert alert-danger"
+                    *ngIf="registerForm.get('password').touched && !registerForm.get('password').valid">
+                    <div *ngIf="registerForm.get('password').errors.required">
+                        password is required
+                    </div>
+                    <div *ngIf="registerForm.get('password').errors.minlength">
+                        password should be 8 minimum characters
+                    </div>
+                    <div *ngIf="registerForm.get('password').errors.maxlength">
+                        password should be 30 maximum characters
+                    </div>
+                </div>
+            </div>
+            <button  class="btn btn-primary" type="submit" [disabled] = "!registerForm.valid">Register</button>
+        </form>
+    </div>
+</div>

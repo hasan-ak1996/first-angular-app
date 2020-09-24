@@ -32,10 +32,14 @@ import { AuthService } from './auth-service-class/auth-service';
 import { LoginComponent } from './login/login.component';
 import { ProtuctedComponent } from './protucted/protucted.component';
 import { LoggedInGuard } from './logged-in-guard';
+import { CalculatorComponent } from './calculator-app/calculator/calculator.component';
+import { ContactFormComponent } from './form-example/contact-form/contact-form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RegisterComponent } from './register&login/register/register.component';
 
 const routes : Routes = [
 
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
@@ -47,7 +51,8 @@ const routes : Routes = [
      canActivate: [ LoggedInGuard ]
    },
   { path: 'search', component: SearchComponent },
-  { path: 'tracks/:id', component: TrackComponent }
+  { path: 'tracks/:id', component: TrackComponent },
+  { path: 'register', component: RegisterComponent },
 ];
 
 
@@ -76,7 +81,10 @@ const routes : Routes = [
     SearchComponent,
     TrackComponent,
     LoginComponent,
-    ProtuctedComponent
+    ProtuctedComponent,
+    CalculatorComponent,
+    ContactFormComponent,
+    RegisterComponent
 
     
   ],
@@ -85,7 +93,8 @@ const routes : Routes = [
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
 
 
   ],
